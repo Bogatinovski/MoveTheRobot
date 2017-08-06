@@ -82,6 +82,7 @@
             this.robotMovementToolStripMenuItem.Name = "robotMovementToolStripMenuItem";
             this.robotMovementToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.robotMovementToolStripMenuItem.Text = "Robot Movement";
+            this.robotMovementToolStripMenuItem.Click += new System.EventHandler(this.robotMovementToolStripMenuItem_Click);
             // 
             // Form1
             // 

@@ -33,5 +33,20 @@ namespace MoveTheRobot
                 Debug.WriteLine("Result BAD");
             }
         }
+
+        private void robotMovementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateMovementForm form = new CreateMovementForm();
+            DialogResult result = form.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+                Debug.Write("Created new movement");
+            }
+            else
+            {
+                Debug.Write("Canceled creating new movement");
+            }
+        }
     }
 }

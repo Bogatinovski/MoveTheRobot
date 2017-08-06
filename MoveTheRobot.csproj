@@ -52,6 +52,12 @@
     <Compile Include="CreateConfiguratonForm.Designer.cs">
       <DependentUpon>CreateConfiguratonForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateMovementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateMovementForm.Designer.cs">
+      <DependentUpon>CreateMovementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CreateConfiguratonForm.resx">
       <DependentUpon>CreateConfiguratonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateMovementForm.resx">
+      <DependentUpon>CreateMovementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

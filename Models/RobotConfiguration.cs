@@ -51,11 +51,8 @@ namespace MoveTheRobot.Models
             XmlDocument document = new XmlDocument();
 
             XmlElement root = document.CreateElement("Configuration");
-            root.SetAttribute("id", Id.ToString());
-
-            XmlElement nameElem = document.CreateElement("Name");
-            nameElem.InnerText = Name;
-            root.AppendChild(nameElem);
+            root.SetAttribute("Id", Id.ToString());
+            root.SetAttribute("Name", Name);
 
             XmlElement motorsElem = document.CreateElement("Motors");
             root.AppendChild(motorsElem);
@@ -63,24 +60,12 @@ namespace MoveTheRobot.Models
             foreach(Motor motor in Motors)
             {
                 XmlElement motorElem = document.CreateElement("Motor");
-                motorElem.SetAttribute("id", motor.Id.ToString());
+                motorElem.SetAttribute("Id", motor.Id.ToString());
+                motorElem.SetAttribute("Name", motor.Name);
+                motorElem.SetAttribute("MinValue", motor.MinValue.ToString());
+                motorElem.SetAttribute("MaxValue", motor.MaxValue.ToString());
+                motorElem.SetAttribute("RobotConfigurationId", motor.RobotConfigurationId.ToString());
                 motorsElem.AppendChild(motorElem);
-
-                XmlElement motorNameElem = document.CreateElement("Name");
-                motorNameElem.InnerText = motor.Name;
-                motorElem.AppendChild(motorNameElem);
-
-                XmlElement minValueElem = document.CreateElement("MinValue");
-                minValueElem.InnerText = motor.MinValue.ToString();
-                motorElem.AppendChild(minValueElem);
-
-                XmlElement maxValueElem = document.CreateElement("MaxValue");
-                maxValueElem.InnerText = motor.MaxValue.ToString();
-                motorElem.AppendChild(maxValueElem);
-
-                XmlElement robotConfIdElem = document.CreateElement("RobotConfigurationId");
-                robotConfIdElem.InnerText = motor.RobotConfigurationId.ToString();
-                motorElem.AppendChild(robotConfIdElem);
             }
 
             document.AppendChild(root);
